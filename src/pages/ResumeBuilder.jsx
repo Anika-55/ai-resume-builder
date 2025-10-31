@@ -6,9 +6,14 @@ import {
   Briefcase,
   ChevronLeft,
   ChevronRight,
+  DownloadCloudIcon,
+  EyeIcon,
+  EyeOff,
+  EyeOffIcon,
   FileText,
   FolderIcon,
   GraduationCap,
+  ShareIcon,
   Sparkles,
   User,
 } from "lucide-react";
@@ -212,12 +217,37 @@ const ResumeBuilder = () => {
                   />
                 )}
               </div>
+              <button className="bg-gradient-to-br from-green-100 to-green-200 ring-green-300 text-green-600 ring hover:ring-green-400 transition-all rounded-md px-6 py-2 mt-6 text-sm">
+                Save Changes
+              </button>
             </div>
           </div>
 
           {/* right panel - preview */}
           <div className="lg:col-span-7 max-lg:mt-6">
-            <div>{/* Buttons */}</div>
+            <div className="relative w-full">
+              {/* Buttons */}
+              <div className="absolute bottom-3 left-0 right-0 flex items-center justify-end gap-2">
+                {resumeData.public && (
+                  <button className="flex items-center p-2 px-4 gap-2 text-xs bg-gradient-to-br from--blue-100 to-blue-200 text-blue-600 rounded-lg ring-blue-300 hover:ring transition-colors">
+                    <ShareIcon className="size-4" />
+                  </button>
+                )}
+
+                <button className="flex items-center p-2 px-4 gap-2 text-xs bg-gradient-to-br from-purple-100 to-purple-200 text-purple-600 ring-purple-300 rounded-lg hover:ring transition-colors">
+                  {resumeData.public ? (
+                    <EyeIcon className="size-4" />
+                  ) : (
+                    <EyeOffIcon className="size-4" />
+                  )}
+                  {resumeData.public ? "Public" : "Private"}
+                </button>
+                <button className="flex items-center gap-2 px-6 py-2 text-xs bg-gradient-to-br from-green-100 to-green-600 rounded-lg ring-green-300 hover:ring transition-colors">
+                  <DownloadCloudIcon className="size-4" />
+                  Download
+                </button>
+              </div>
+            </div>
 
             {/* -- resume preview ---  */}
             <ResumePreview
