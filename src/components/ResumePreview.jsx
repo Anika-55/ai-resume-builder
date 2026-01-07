@@ -3,7 +3,6 @@ import ClassicTemplate from "./templates/ClassicTemplate";
 import ModernTemplate from "./templates/ModernTemplate";
 import MinimalTemplate from "./templates/MinimalTemplate";
 import MinimalImageTemplate from "./templates/MinimalImageTemplate";
-import { Axe } from "lucide-react";
 
 const ResumePreview = ({ data, template, accentColor, classes = "" }) => {
   const renderTemplate = () => {

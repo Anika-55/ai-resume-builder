@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BriefcaseBusiness,
   Globe,
@@ -7,7 +8,6 @@ import {
   Phone,
   User,
 } from "lucide-react";
-import React from "react";
 
 const PersonalInfoForm = ({
   data = {},
@@ -16,7 +16,7 @@ const PersonalInfoForm = ({
   setRemoveBackground,
 }) => {
   const handleChange = (field, value) => {
-    onChange({ ...data, [field]: value }); 
+    onChange({ ...data, [field]: value });
   };
 
   const fields = [
@@ -77,7 +77,7 @@ const PersonalInfoForm = ({
             type="file"
             accept="image/jpeg, image/png"
             className="hidden"
-            onChange={(e) => handleChange("image", e.target.files[0])} 
+            onChange={(e) => handleChange("image", e.target.files[0])}
           />
         </label>
 
@@ -110,7 +110,7 @@ const PersonalInfoForm = ({
             <input
               type={field.type}
               value={data[field.key] || ""}
-              onChange={(e) => handleChange(field.key, e.target.value)} 
+              onChange={(e) => handleChange(field.key, e.target.value)}
               className="mt-1 w-full px-3 p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors text-sm"
               placeholder={`Enter your ${field.label.toLowerCase()}`}
               required={field.required}

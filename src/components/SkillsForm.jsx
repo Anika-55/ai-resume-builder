@@ -5,7 +5,7 @@ const SkillsForm = ({ data, onChange }) => {
   const [newSkill, setNewSkill] = useState("");
 
   const addSkill = () => {
-    if (newSkill.trim() && !date.includes(newSkill.trim())) {
+    if (newSkill.trim() && !data.includes(newSkill.trim())) {
       onChange([...data, newSkill.trim()]);
       setNewSkill("");
     }
@@ -23,7 +23,7 @@ const SkillsForm = ({ data, onChange }) => {
   };
   return (
     <div className="space-y-4">
-      <div className="">
+      <div>
         <h3 className="flex items-center gap-2 text-lg font-semibold">
           Skills
         </h3>

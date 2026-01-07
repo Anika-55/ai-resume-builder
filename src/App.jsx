@@ -20,7 +20,8 @@ const App = () => {
     try {
       if (token) {
         const { data } = await api.get("/api/users/data", {
-          headers: { Authorization: token },
+          // headers: { Authorization: token },
+          headers: { Authorization: `Bearer ${token}` },
         });
         if (data.user) {
           dispatch(login({ token, user: data.user }));
@@ -43,7 +44,6 @@ const App = () => {
       <Toaster />
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-
         <Route path="app" element={<Layout></Layout>}>
           <Route index element={<Dashboard></Dashboard>}></Route>
           <Route
