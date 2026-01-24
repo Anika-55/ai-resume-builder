@@ -3,7 +3,7 @@
 A modern, responsive Resume Builder Web App that helps users create, edit, and export professional resumes .
 Built with a powerful React + Vite stack and a clean, accessible UI system.
 
-🚀 Live Demo:
+🚀 Live Demo: https://strong-profiterole-5bb844.netlify.app
 
 ✨ Features
 
